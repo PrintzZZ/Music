@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/community/community",
+    "pages/home/home",
+    "pages/search/search"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#16161a",
+    "navigationBarTitleText": "Music",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color": "#57595c",
+    "selectedColor": "red",
+    "backgroundColor": "#16161a",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "/images/music.png",
+        "selectedIconPath": "/images/music-s.png"
+      },{
+        "text": "搜索",
+        "pagePath": "pages/search/search",
+        "iconPath": "/images/search.png",
+        "selectedIconPath": "/images/search-s.png"
+      },{
+        "text": "社区",
+        "pagePath": "pages/community/community",
+        "iconPath": "/images/wireless.png",
+        "selectedIconPath": "/images/wireless-s.png"
+      }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

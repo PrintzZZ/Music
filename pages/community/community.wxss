@@ -1,0 +1,254 @@
+/* pages/community/community.wxss */
+.container {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  color: #ffffff;
+  position: relative;
+  top: 10px;
+  transform: scale(0.95);
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+}
+.box-open{
+  transform: scale(1);
+  position: relative;
+  top:0px;
+}
+.container .item-box {
+  width: 92%;
+  margin: 10px 4%;
+}
+/* 头部 */
+.container .item-box .item-top{
+  width: 100%;
+  height: 4rem;
+  /* background-color: blue; */
+  display: flex;
+}
+/* 头像 */
+.container .item-box .item-top .head-img-box{
+  width: 20%;
+  height: 4rem;
+  /* background-color: brown; */
+  /* margin-top: 0.5rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .item-box .item-top .head-img-box image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+}
+.container .item-box .item-top .head-img-box .headimgclose{
+  filter: brightness(50%);
+}
+.container .item-box .item-top .head-img-box .headimgopen{
+  filter: brightness(80%);
+}
+/* 用户信息 */
+.container .item-box .item-top .user-info-box{
+  width: 80%;
+  height: 4rem;
+  /* background-color: rgb(104, 12, 12); */
+  margin-top: 0.5rem;
+  /* padding: 0 .4rem; */
+}
+/* 标题 */
+.container .item-box .item-top .user-info-box .username{
+  width: 100%;
+  height: 1.5rem;
+  /* background-color: cornsilk; */
+  /* line-height: 1.5rem; */
+  overflow-x: auto;
+}
+.container .item-box .item-top .user-info-box .username {
+  font-size: 14px;
+}
+.container .item-box .item-top .user-info-box .username .by{
+  font-size: 12px;
+  color: #434a4e;
+  margin: 0 0.6rem;
+}
+/* 日期 */
+.container .item-box .item-top .user-info-box .date-box {
+  width: 100%;
+  height: 1.5rem;
+  /* line-height: 2rem; */
+  color: #50575b;
+  font-size: 12px;
+}
+/* 中间 */
+.container .item-box .item-mid{
+  width: 100%;
+  /* height: 200px; */
+  background-color: #1c1d21;
+  border-radius: 5px;
+  /* padding: 10px; */
+}
+/* 封面 */
+.container .item-box .item-mid .music-box {
+  /* background-color: cyan; */
+  display: flex;
+}
+.container .item-box .item-mid .music-box .img-box {
+  position: relative;
+}
+.container .item-box .item-mid .music-box .img-box image{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 5px;
+  filter: brightness(50%);
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+  /* transition: cubic-bezier(.69,0,.27,1.55) 1s; */
+}
+.container .item-box .item-mid .music-box .img-box .songimgopen{
+  width: 5rem;
+  height: 5rem;
+  filter: brightness(80%);
+}
+.container .item-box .item-mid .music-box .img-box .songimgclose{
+  width: 6rem;
+  height: 6rem;
+  filter: brightness(50%);
+}
+/* 播放按钮 */
+.container .item-box .item-mid .music-box .img-box .play{
+  position: absolute;
+  left: 50%; top: 50%;   
+  transform: translate(-50%, -50%);    /* 50%为自身尺寸的一半 */  
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 9999;
+  filter: brightness(.9)
+}
+/* 暂停按钮 */
+.container .item-box .item-mid .music-box .img-box .pause{
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+  position: absolute;
+  left: 50%; top: 50%;   
+  transform: translate(-50%, -50%);    /* 50%为自身尺寸的一半 */  
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 9999;
+  filter: brightness(.9)
+}
+/* 歌曲卡片标题 */
+.container .item-box .item-mid .music-box .song-info{
+  padding-left: 10px;
+}
+.container .item-box .item-mid .music-box .song-info .singer{
+  font-size: 14px;
+  color: #5c6065;
+  line-height: 2rem;
+}
+/* 时间效果 */
+.container .item-box .item-mid .music-box .song-info .time {
+  transition: cubic-bezier(.68,-0.55,.27,1.55) width 1s;
+  height: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 12px;
+  color: #ff0000;
+  background-color: #3c3e46;
+  box-shadow: 0px -1px 2px rgba(255, 0, 0, 0.5);
+  border-radius: 8px;
+  border-bottom: 1px solid red;
+}
+.container .item-box .item-mid .music-box .song-info .timeclose{
+  width: 0px;
+  
+}
+.container .item-box .item-mid .music-box .song-info .timeopen{
+  width: 74px;
+}
+.container .item-box .item-mid .music-box .song-info .time text{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.container .item-box .item-mid .music-box .song-info .play{
+  width: 50%;
+  overflow: hidden;
+}
+/* 尾部 */
+.container .item-box .item-bottom{
+  transition: cubic-bezier(.68,-0.55,.27,1.55) height 1s;
+  width: 100%;
+  overflow: hidden;
+  /* margin-top: 20px; */
+  transform: rotate(180deg);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* background-color: rgb(255, 0, 119); */
+  position: relative;
+  border-top: red solid 1px;
+  box-shadow: 0px -1px 2px rgba(255, 0, 0, 0.5);
+}
+.container .item-box  .item-bottomclose{height: 0;}
+.container .item-box  .item-bottomopen{height: 3.5rem;}
+.container .item-box .item-bottom .gifj {
+  width: 100%;
+  height: 3.5rem;
+  /* position: absolute;
+  top: -5px; */
+  background-size: 100% 100%;
+}
+.container .item-box .item-bottom .gifbox {
+  width: 100%;
+  height: 3rem;
+  background-position-y: -7px;
+  background-size: 110% 110%;
+
+}
+.container .item-box .item-bottom .gifbox .playbox{
+  /* width: 50%; */
+  height: 3.5rem;
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+  position: relative;
+}
+.container .item-box .item-bottom .playbox image {
+  /* transform: rotate(180deg); */
+  /* width: 100%; */
+  height: 3rem;
+  object-fit: cover;
+  position: absolute;
+  /* top: -10px; */
+}
+/* 热评 */
+.container .item-box .item-context-box{
+  width: 100%;
+  padding: 20px 0px;
+  background-color: #1c1d21;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+  font-weight: bolder;
+}
+.container .item-box .item-context{
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+  overflow: hidden;
+  height: 40px;
+}
+.container .item-box .item-context-open{
+  color: #c4c4c4;
+  height: 100px;
+}
+.container .item-box .item-context-close{
+  color: #434a4e;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  /*超出两行显示省略号*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

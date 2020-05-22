@@ -1,0 +1,48 @@
+<!--pages/community/community.wxml-->
+<view class="container {{boxopen}}">
+  <view class="item-box" wx:for="{{audioArr}}" wx:key="content" wx:for-item="v" wx:for-index="key">
+    <view class="item-top">
+      <view class="head-img-box">
+        <image src="{{v.simpleUserInfo.avatar}}" class="{{index === key ? 'headimgopen' : 'headimgclose'}}"></image>
+      </view>
+      <view class="user-info-box">
+        <view class="username">
+          <text class="user-name">{{v.simpleUserInfo.nickname}}</text>
+          <text class="by">by Top Comments</text>
+          <!-- <text class="songname">Top Comments</text> -->
+        </view>
+        <view class="date-box">
+          <text>{{v.time}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 热评 -->
+    <view class="item-context-box">
+      <view class="item-context {{index === key ? '.item-context-open' : '.item-context-close'}}">
+        <text>{{v.content}}</text>
+      </view>
+    </view>
+    <view class="item-mid">
+      <view class="music-box">
+        <view class="img-box">
+          <image class="play {{index === key ? 'playopen' : 'playclose'}}" wx:if="{{!v.bl}}" bindtap="playbtn" data-key="{{key}}" data-id="{{v.id}}" data-bl="{{v.bl}}" src="./../../images/play.png"></image>
+          <image class="pause {{index === key ? 'pauseopen' : 'pauseclose'}}" wx:if="{{v.bl}}" bindtap="pausebtn" data-key="{{key}}" data-id="{{v.id}}" data-bl="{{v.bl}}" src="./../../images/pause.png"></image>
+          <image src="{{v.simpleResourceInfo.songCoverUrl}}" class="{{index === key ? 'songimgopen' : 'songimgclose'}}"></image>
+        </view>
+        <view class="song-info">
+          <view><text>{{v.simpleResourceInfo.name}}</text></view>
+          <view><text class="singer">{{v.simpleResourceInfo.artists[0].name}}</text></view>
+          <view class="{{index === key ? 'timeopen' : 'timeclose'}} time"><text>{{v.totaltime}}</text></view>
+        </view>
+      </view>
+    </view>
+    <!-- 可视化频谱 -->
+    <view class="item-bottom {{index === key ? 'item-bottomopen' : 'item-bottomclose'}}">
+      <view class="gifj" wx:if="{{!v.bl}}" style="background: url('https://s1.ax1x.com/2020/05/20/YoTZSH.png')"></view>
+      <view wx:if="{{v.bl}}" class="gifbox" style="background: url('https://s1.ax1x.com/2020/05/20/YoHEMd.gif')">
+        <view class="playbox" style="width: {{value}}%;"><image src="./../../images/g-g.gif"></image></view>
+      </view>
+    </view>
+    
+  </view>
+</view>

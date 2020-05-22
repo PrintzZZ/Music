@@ -1,0 +1,24 @@
+<view class='audioPlayer'>
+  <view class='player'>
+    <image src='{{audiolist[0].coverimg}}' class='audioBack'></image>
+    <view class='audioControls'>
+      <view class='flex'>
+        <view class='bottom' catchtap='playAudio'>
+          <!-- 按钮 -->
+          <view wx:if="{{isPlayAudio}}">
+            <image src='./../../images/pause.png' />
+          </view>
+          <view wx:else>
+            <image src='./../../images/play.png' />
+          </view>
+        </view>
+        <view class='slider'>
+          <slider bindchange='sliderChange' activeColor='red' block-size="12" value='{{audioTime}}' />
+        </view>
+        <view class='time'>
+          {{showTime1}}/{{showTime2}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
