@@ -24,14 +24,17 @@
 
 
 #### 预览图
-> 首页
-> https://imgchr.com/i/t6Dbvj
-![t6DH2Q.gif](https://s1.ax1x.com/2020/06/06/t6DH2Q.gif)
+##### 首页
+> 动态图地址 https://imgchr.com/i/t6Dbvj
 
-> 搜索
-> https://imgchr.com/i/t6D78g
-![t6Dbvj.gif](https://s1.ax1x.com/2020/06/06/t6Dbvj.gif)
+[![t6Dbvj.md.gif](https://s1.ax1x.com/2020/06/06/t6Dbvj.md.gif)](https://imgchr.com/i/t6Dbvj)
 
-> 社区
-> https://imgchr.com/i/t6DH2Q
-![t6D78g.gif](https://s1.ax1x.com/2020/06/06/t6D78g.gif)
+##### 搜索
+> 动态图地址https://imgchr.com/i/t6D78g
+
+[![t6D78g.md.gif](https://s1.ax1x.com/2020/06/06/t6D78g.md.gif)](https://imgchr.com/i/t6D78g)
+
+##### 社区
+> 动态图地址https://imgchr.com/i/t6DH2Q
+
+[![t6DH2Q.md.gif](https://s1.ax1x.com/2020/06/06/t6DH2Q.md.gif)](https://imgchr.com/i/t6DH2Q)
