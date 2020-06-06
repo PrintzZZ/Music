@@ -1,1 +1,200 @@
 /* pages/search/search.wxss */
+.sbox{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+}
+.sbox .search-box{
+  width: 100%;
+  display: flex;
+  color: #787878;
+  background-color: rgb(34, 35, 40);
+  border-radius: 5px;
+  /* padding: 10px; */
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.sbox .search-box .iconbox{
+  width: 36px;
+  height:36px;
+  position: relative;
+  margin:0 5px;
+
+}
+.sbox .search-box .icon{
+  width: 25px;
+  height:25px;
+  background-image: url('https://s1.ax1x.com/2020/05/27/tElOmR.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.sbox .search-box .s-input{
+  width:100%;
+  height:36px;
+  
+  /* box-shadow: 20px 20px 60px rgba(84, 34, 34, 0.5), 1px 1px 0px 1px rgba(255, 0, 0, 0.7); */
+}
+.searchnonebox{
+  position: absolute;
+  top: 60px;
+  transition: cubic-bezier(.86,0,.07,1) 1s;
+  height: 80vh;
+}
+.searchnoneboxclose{
+  top: 100vh;
+  transition: cubic-bezier(.86,0,.07,1) 1s;
+  height: 0;
+  overflow: hidden;
+}
+.hotsearchbox{
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.hot-search{
+  box-sizing: border-box;
+  padding: 0 5px;
+  white-space : normal nowrap;
+  height: 30px;
+  background-color: #222328;
+  line-height: 30px;
+  border-radius: 5px;
+  margin:5px;
+  font-size: 12px;
+  color: #787878;
+}
+
+.song-box{
+  width: 100%;
+}
+.song-box .nones{
+  width: 100%;
+  margin-top: 90px;
+  opacity: 0;
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+}
+.song-box .noneopen{
+  width: 100%;
+  margin-top: 50px;
+  opacity: 1;
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+}
+.song-box .nones text{
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #acacac;
+}
+.song-box .nones .tip{
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #787878;
+}
+/* 搜索结果样式 */
+.songlist{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.songlistbox{
+  box-sizing: border-box;
+  padding:10px;
+  margin:10px 0 ;
+  background-color: rgb(30, 32, 34);
+  text-align: center;
+  border-radius: 12px;
+  color: #757678;
+  box-shadow: 0px -1px 2px rgba(255, 0, 0, 0.5);
+}
+.songlistbox image{
+  display: none;
+}
+.songlistbox .songname{
+  /* display: none; */
+  margin-top: 20px;
+  font-size: 14px;
+}
+.songlistbox .singer{
+  /* display: none; */
+  margin-top: 20px;
+  font-size: 12px;
+}
+/* 最佳搜索样式 */
+.songlistbox:nth-child(1){
+  width: 100%;
+  height: 15rem;
+  margin: 0 auto;
+  background-color: #787878;
+  position: relative;
+  border-radius: 12px;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+}
+.songlistbox:nth-child(1)::before{
+  content: "最佳搜索";
+  z-index: 9999;
+  width: 60px;
+  height: 20px;
+  box-sizing: border-box;
+  padding: 0 5px;
+  background-color: rgba(255, 0, 0, 0.207);
+  position: absolute;
+  top: 0px;
+  font-size: 12px;
+  /* border-top-right-radius: 12px; */
+  border-bottom-right-radius: 12px;
+  left: 0;
+}
+.songlistbox:nth-child(1):after{
+  content: "";
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+  background: inherit;
+  filter: blur(2px) brightness(50%);
+  z-index: 2;
+}
+.songlistbox:nth-child(1) image{
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  z-index: 3;
+  border-radius: 12px;
+}
+.songlistbox:nth-child(1) .songname{
+  z-index: 11;
+  position: absolute;
+  left:50%;
+  top:80%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  margin-top: 0;
+}
+.songlistbox:nth-child(1) .singer{
+  z-index: 11;
+  position: absolute;
+  left:50%;
+  top:90%;
+  margin-top: 0;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  font-size: 12px;
+  color: #e2e2e2;
+}

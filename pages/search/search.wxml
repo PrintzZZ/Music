@@ -1,2 +1,48 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="sbox">
+  <view class="search-box">
+    <view class="iconbox">
+      <view class="icon"></view>
+    </view>
+    <input class="s-input" placeholder="请输入..." value="{{inputvalue}}" bindconfirm="searchBtn" catchfocus="inpfocus" bindblur="inpfocusx" bindinput="inputbnt"></input>
+  </view>
+
+  <view class="songlist">
+    <view class="songlistbox" 
+    wx:for='{{songlist}}'
+    wx:key='song'
+    data-index='{{key}}'
+    data-id="{{item.id}}"
+    style="background-image: url('{{item.imgurl}}');"
+    bindtap="songtap"
+    >
+      <view><image src="{{item.imgurl}}"></image></view>
+      <view class="songname">{{item.name}}</view>
+      <view class="singer">{{item.artists[0].name}}</view>
+    </view>
+  </view>
+
+  <view class="searchnonebox {{snboxclass}}">
+    <view class="hotsearchbox">
+      <view class="hot-search" 
+      wx:for='{{hotsearch}}' 
+      wx:key='hot' 
+      wx:for-item="item" 
+      wx:for-index="key"
+      data-name="{{item.first}}"
+      data-key="{{key}}"
+      bindtap="tap"
+      >
+        {{item.first}}
+      </view>
+    </view>
+
+    <view class="song-box">
+      <view class="nones {{sboxclass}}">
+        <text>What are</text>
+        <text>you looking for ?</text>
+        <text class="tip">输入关键字，寻找你最喜欢的歌曲</text>
+      </view>
+    </view>
+  </view>
+</view>

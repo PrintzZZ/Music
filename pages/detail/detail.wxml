@@ -1,0 +1,17 @@
+<!--pages/detail.wxml-->
+<view class="detailbox">
+  <view class="songimg">
+    <image src="{{song[0].al.picUrl}}"></image>
+  </view>
+  <view class="songname">{{song[0].al.name}}</view>
+  <view class="arname">{{song[0].ar[0].name}}</view>
+  <!-- 歌词 -->
+  <scroll-view class="lrc {{indexp === keyp ? 'lrc' : 'lrcnone'}}" scroll-y="true"  scroll-top="{{scrolltop}}" scroll-with-animation='true'>
+    <view wx:for='{{songtext}}' wx:key="lrc" wx:for-item="litem">
+      {{litem.text}}
+    </view>
+  </scroll-view>
+  <!-- 播放按钮 -->
+  <view class="pausebtn" bindtap="pausebtn" wx:if='{{playflag}}'><image src="https://s1.ax1x.com/2020/05/27/tkq1FH.png"></image></view>
+  <view class="playbtn" bindtap="playbtn" wx:if='{{!playflag}}'><image src="https://s1.ax1x.com/2020/05/27/tkqQTe.png"></image></view>
+</view>

@@ -1,54 +1,182 @@
-.flex{
-  display: flex;
-}
-.audioPlayer{
+.home-box{
   width: 100%;
-  height: 400rpx;
-  margin-bottom: 30rpx;
   box-sizing: border-box;
-  padding: 20rpx 30rpx;
-}
-.player{
-  width: 100%;
-  height: 100%;
+  transition: ease 0.75s;
+  /* 开启视距 */
+  /* perspective: 1400px; */
+  /* 开启3D空间 */
+  /* transform-style: preserve-3d; */
+  /* transition: ease 0.25s; */
+  transform: scale(0.95);
+  transform: rotate(0deg);
   position: relative;
 }
-.audioBack{
+.box-open{
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+  transform: scale(1);
+  transform: rotate(3deg);
+  position: relative;
+  /* top:0px; */
+}
+/* 卡片通用样式 */
+.home-box .song-list{
+  width: 80%;
+  border-radius: 12px;
+  color: white;
+  overflow: hidden;
+  background-color: #1c1d21;
+  box-shadow: 20px 20px 60px rgba(84, 34, 34, 0.5), 1px 1px 0px 1px rgb(255, 0, 0);
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
+  transition-property:width,height, transform;
+}
+.home-box .song-list:nth-child(1){
+  margin-top: 0px;
+}
+.home-box .song-list:nth-child(1) .sltitle{
+  margin-top: 20px;
+}
+.home-box  .song-list-colse{
+  margin: -20px auto;
+  height:80px;
+  transform: rotateX(10deg) rotateY(10deg) rotateZ(-5deg);
+  /* transition: cubic-bezier(0.6, -0.28, 0.735, 0.045); */
+}
+/* 卡片打开 */
+.home-box  .song-list-open{
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0;
+  transform: rotateX(0);
+  background-size: 0!important;
+  box-shadow: none;
+  /* transition: ease 0.75s; */
+  /* filter: brightness(50%); */
+}
+.home-box  .song-list-open:nth-child(1){
+  /* margin-top: 0px; */
+}
+/* 歌单标题 */
+.home-box .song-list .song-list-title{
+  width: 100%;
+  /* height: 30px; */
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #434a4e;
+}
+/* 标题打开 */
+.home-box .song-list .sltitle{
+  width: 100%;
+  /* margin-top: 10px; */
+  height: 5vh;
+  text-align: center;
+  font-size: 16px;
+  color: #c5e2f4;
+  line-height: 5vh;
+}
+.home-box .song-list .sltitle:nth-child(1){
+  /* margin-top: 30px; */
+}
+/* 听歌人数 */
+.home-box .song-list .song-list-usedcount{
+  width: 100%;
+  height: 5vh;
+  /* margin-top: 5px; */
+  text-align: center;
+  font-size: 12px;
+  color: #434a4e;
+}
+.home-box .song-list .slu-none{
+  display: none;
+}
+/* 歌单详情 */
+.home-box .song-list .song-list-songlist{
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.home-box .song-list .song-list-songlist .swiperbox{
+  height: 85vh;
+}
+.home-box .song-list .song-list-songlist swiper-item{
+  /* background-color: #ccd2e9; */
+  color: #979c9e;
+  /* border: 1px red solid; */
+  /* background-color: rgb(61, 61, 55); */
+  box-sizing: border-box;
+  /* padding: 0 10px; */
+  text-align: center;
+  position: relative;
+}
+/* 封面 */
+.home-box .song-list .song-list-songlist swiper-item .songname{
+  width: 100%;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 10px;
+}
+.home-box .song-list .song-list-songlist swiper-item .songimg{
+  width: 30vh;
+  height: 30vh;
+  margin: 0 auto;
+}
+.home-box .song-list .song-list-songlist swiper-item .songimg image{
   width: 100%;
   height: 100%;
+  border-radius: 12px;
+  border-bottom: red 1px solid;
+  box-shadow: 0px -1px 2px rgba(255, 0, 0, 0.5);
 }
-.audioControls{
+.home-box .song-list .song-list-songlist swiper-item .arname{
   width: 100%;
-  height: 80rpx;
-  background: black;
-  opacity: .8;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+}
+.home-box .song-list .song-list-songlist swiper-item .lrc{
+  width: 100%;
+  height: 30vh;
+  /* background-color: black; */
+  margin-top: 20px;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.home-box .song-list .song-list-songlist swiper-item .lrcnone{
+  display: none;
+}
+.home-box .song-list .song-list-songlist swiper-item .tip{
+  margin-top: 50px;
+}
+.home-box .song-list .song-list-songlist swiper-item .tipnone{
+  display: none;
+}
+/* 播放按钮 */
+.home-box .song-list .song-list-songlist swiper-item .playbtn{
+  width: 100%;
   position: absolute;
   bottom: 0;
-  color: white;
-  font-size: 6pt;
-  line-height: 80rpx;
+}
+.home-box .song-list .song-list-songlist swiper-item .pausebtn{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.home-box .song-list .song-list-songlist swiper-item .playbtn image{
+  width: 40px;
+  height: 40px;
   text-align: center;
 }
-.audioControls .bottom{
-  width: 60rpx;
-  height: 100%;
+.home-box .song-list .song-list-songlist swiper-item .pausebtn image{
+  width: 40px;
+  height: 40px;
 }
-.audioControls .bottom image{
-  margin-top: 30%;
-  margin-left: 30%;
-  width: 40rpx;
-  height: 40rpx;
-}
-.audioControls .slider{
-  width: 520rpx;
-  height: 100%;
-}
-.slider slider{
-  width: 95%;
-  margin-left: 4%;
-  margin-right: 0;
-}
-.audioControls .time{
-  width: 120rpx;
-  height: 100%;
+/* 歌单详情关闭 */
+.home-box .song-list .slu-slt{
+  display: none;
 }

@@ -7,15 +7,16 @@
   height: auto;
   overflow: auto;
   color: #ffffff;
-  position: relative;
-  top: 10px;
+  /* position: relative; */
+  /* top: 10px; */
   transform: scale(0.95);
   transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
 }
 .box-open{
+  transition: cubic-bezier(.68,-0.55,.27,1.55) 1s;
   transform: scale(1);
   position: relative;
-  top:0px;
+  /* top:0px; */
 }
 .container .item-box {
   width: 92%;
@@ -65,6 +66,7 @@
   /* background-color: cornsilk; */
   /* line-height: 1.5rem; */
   overflow-x: auto;
+  color: #434a4e;
 }
 .container .item-box .item-top .user-info-box .username {
   font-size: 14px;
@@ -225,7 +227,8 @@
 /* 热评 */
 .container .item-box .item-context-box{
   width: 100%;
-  padding: 20px 0px;
+  box-sizing: border-box;
+  padding: 20px 10px;
   background-color: #1c1d21;
   font-size: 13px;
   line-height: 20px;

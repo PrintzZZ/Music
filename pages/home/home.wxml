@@ -1,24 +1,37 @@
-<view class='audioPlayer'>
-  <view class='player'>
-    <image src='{{audiolist[0].coverimg}}' class='audioBack'></image>
-    <view class='audioControls'>
-      <view class='flex'>
-        <view class='bottom' catchtap='playAudio'>
-          <!-- 按钮 -->
-          <view wx:if="{{isPlayAudio}}">
-            <image src='./../../images/pause.png' />
-          </view>
-          <view wx:else>
-            <image src='./../../images/play.png' />
-          </view>
-        </view>
-        <view class='slider'>
-          <slider bindchange='sliderChange' activeColor='red' block-size="12" value='{{audioTime}}' />
-        </view>
-        <view class='time'>
-          {{showTime1}}/{{showTime2}}
-        </view>
-      </view>
+<view class="home-box {{boxopen}}">
+  <view class="song-list {{index === key ? 'song-list-open' : 'song-list-colse'}}" 
+    bindtap="boxopen" 
+    data-key="{{key}}" 
+    wx:for="{{songlist}}" 
+    wx:key="content" 
+    wx:for-item="item" 
+    wx:for-index="key"
+    style="background-image:url({{item.coverImgUrl}});background-repeat:no-repeat; background-size:auto 100% ;{{listrotate}} ">
+    <view class="{{index === key ? 'sltitle' : 'song-list-title'}}">{{item.name}}</view>
+    <view class="{{index === key ? 'slu-none' : 'song-list-usedcount'}}">{{item.playCount}}人在听</view>
+    <view class="{{index === key ? 'song-list-usedcount' : 'slu-none'}}">双击页面，收起歌单</view>
+    <view class="{{index === key ? 'song-list-songlist' : 'slu-slt'}}">
+      <swiper class="swiperbox">
+        <block wx:for="{{songdetaile}}" wx:key="sw" wx:for-item="v" wx:for-index="keyp" data-keyp="{{keyp}}">
+          <swiper-item>
+            <view class="songimg">
+              <image src="{{v.al.picUrl}}?param=300y300"></image>
+            </view>
+            <view class="songname">{{v.name}}</view>
+            <view class="arname">{{v.ar[0].name}}</view>
+            <!-- 歌词 -->
+            <view class="{{indexp === keyp ? 'tipnone' : 'tip'}}">左右滑动切换歌曲</view>
+            <scroll-view class="lrc {{indexp === keyp ? 'lrc' : 'lrcnone'}}" scroll-y="true"  scroll-top="{{scrolltop}}" scroll-with-animation='true'>
+              <view wx:for='{{songtext}}' wx:key="lrc" wx:for-item="litem">
+                {{litem.text}}
+              </view>
+            </scroll-view>
+            <!-- 播放按钮 -->
+            <view class="pausebtn" bindtap="pausebtn" wx:if='{{v.bl}}' data-key="{{keyp}}" data-id="{{v.id}}"><image src="https://s1.ax1x.com/2020/05/27/tkq1FH.png"></image></view>
+            <view class="playbtn" bindtap="playbtn" wx:if='{{!v.bl}}' data-key="{{keyp}}" data-id="{{v.id}}"><image src="https://s1.ax1x.com/2020/05/27/tkqQTe.png"></image></view>
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
   </view>
 </view>

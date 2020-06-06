@@ -33,6 +33,7 @@ Page({
   },
   // 播放
   playbtn: function (e) {
+    console.log(e.currentTarget)
     this.setData({
       index: e.currentTarget.dataset.key
     })
@@ -183,16 +184,9 @@ Page({
     this.setData({
       audioArr: array
     })
-    console.log(this.data.audioArr);
+    // console.log(this.data.audioArr);
   },
   onShow: function(){
-    wx.request({
-      url: 'https://music.yadzxf.com/comment/hotwall/list',
-      success(res) {
-        console.log(res)
-      }
-    })
-    console.log(1)
     this.setData({
       boxopen: 'box-open'
     })
